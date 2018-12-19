@@ -14,6 +14,7 @@
       var BALL_COLOR = "#0000ff";
       var BALL_COLOR2 = "#ff0000";
       var BALL_COLOR3 = "#00ff00";
+      var BALL_COLOR4 = "#ff33cc";
       // The x and y position of the ball. Start in the center
       var ballX = CANVAS_WIDTH / 2;
       var ballY = CANVAS_HEIGHT / 2;
@@ -21,6 +22,8 @@
       var ballY2 = CANVAS_HEIGHT / 2;
       var ballX3 = CANVAS_WIDTH / 2;
       var ballY3 = CANVAS_HEIGHT / 2;
+      var ballX4 = CANVAS_WIDTH / 2;
+      var ballY4 = CANVAS_HEIGHT / 2;
       // The current speed of the ball
       var dx = 1;
       var dy = 5;
@@ -28,6 +31,8 @@
       var dy2 = 5;
       var dx3 = 1;
       var dy3 = -5;
+      var dx = -1;
+      var dy = -5;
       /**
        * This function takes a 2d canvas context and draws a ball on it at ballX and ballY
        * of radius BALL_RADIUS and color BALL_COLOR.
@@ -40,6 +45,8 @@
         ballY2 = ballY2 + dy2;
         ballX3 = ballX3 + dx3;
         ballY3 = ballY3 + dy3;
+        ballX4 = ballX4 + dx4;
+        ballY4 = ballY4 + dy4;
         // If we've hit the left or right, turn around
         if (ballX > CANVAS_WIDTH || ballX < 0) {
           dx = -dx;
@@ -64,6 +71,13 @@
         if (ballY3 > CANVAS_HEIGHT || ballY3 < 0) {
           dy3 = -dy3;
         }
+        if (ballX4 > CANVAS_WIDTH || ballX4 < 0) {
+          dx4 = -dx4;
+        }
+        // If we've hit the top or bottom, turn around
+        if (ballY4 > CANVAS_HEIGHT || ballY4 < 0) {
+          dy4 = -dy4;
+        }
         // Actually draw the ball
         context.beginPath();
         context.fillStyle = BALL_COLOR;
@@ -80,6 +94,12 @@
         context.beginPath();
         context.fillStyle = BALL_COLOR3;
         context.arc(ballX3, ballY3, BALL_RADIUS, 0, 2 * Math.PI, true);
+        context.closePath();
+        context.fill();
+        // Actually draw the ball
+        context.beginPath();
+        context.fillStyle = BALL_COLOR4;
+        context.arc(ballX4, ballY4, BALL_RADIUS, 0, 2 * Math.PI, true);
         context.closePath();
         context.fill();
       }
