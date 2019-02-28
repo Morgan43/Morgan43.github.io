@@ -16,6 +16,7 @@
       //Set up an array of the answer
       var answerArray = [];
       for(var i = 0; i < word.length; i++)
+        
       { 
         answerArray[i] = "_";
       }
@@ -41,7 +42,7 @@
           //they have guessed a letter, is it in the word?
           for(var j = 0; j < word.length; j++)
           { 
-            if (word[j] === guess)
+            if (word[j] === guess && answerArray[j] === "_")
             {
             answerArray[j] = guess;
             remainingLetters--;
