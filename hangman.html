@@ -9,6 +9,10 @@
     <script>
       //Create a list of words to choose from
       var words = ["mammaml","human", "Logan", "Morgan", "Hanna" ,"reading", "dog", "cat", "dolphin", "orca"];
+      var guessedLetters = [];
+      
+      //lives
+      var lives = 6
       
       //Pick a random word
       var word = words[Math.floor(Math.random() *words.length)];
@@ -46,7 +50,17 @@
             {
             answerArray[j] = guess;
             remainingLetters--;
+              guessedLetters.push(guess);
             }
+            else if (guessedLetters.indexOf(guess) >= 0)
+            {
+              alert("you have already guessed that letter");
+            }
+            else
+            {
+              guessedLetters.push(guess); && lives -= 1
+            }
+            
           }
         }
       }
