@@ -27,7 +27,6 @@
       {
       $("h1").fadeOut(3000).fadeIn(2000);
       $("h1").slideUp(1000).slideDown(1000);
-      }
       
       var timeup = function ()
       {
@@ -41,6 +40,13 @@
       var timeoutId = setTimeout(doHomeworkAlarm, 60000);
       
       clearTimeout(timeoutID);
+        
+      var printMessage = function()
+      {
+        $("body").append("<p> You have been staring"+ "at your screen for "+counter+" seconds. </p>");
+      };
+        
+      var intervalId = setInterval(printMessage, 1000);
       
     </script>
     
