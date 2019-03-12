@@ -28,7 +28,12 @@ leftOffset = 0; //send back to begining (left of page)
 };
 
 setInerval(moveHeading, 30); // remember 1000 is one second
-
+  
+  var clickHandler = function(event)
+  {
+    $("body").append("Click! " + event.pageX +" "+ event.pageY);
+  };
+  $("#heading").click(clickhandler);
 </script>
 </body>
 
