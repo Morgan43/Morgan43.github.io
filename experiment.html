@@ -31,9 +31,18 @@ setInterval(moveHeading, 30); // remember 1000 is one second
   
   var clickHandler = function(event)
   {
-    $("body").append("Click! " + event.pageX +" "+ event.pageY);
+    $("body").append("Click! " + event.pageX +" "+ event.pageY+"</p>");
   };
   $("#heading").click(clickHandler);
+  
+  $("html").mousemove(function(event)
+  {
+    $("#heading").offset({
+      left:event.pageX,
+      top:event.pageY
+    });
+  });
+  
 </script>
 </body>
 
