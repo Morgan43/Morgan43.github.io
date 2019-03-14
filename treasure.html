@@ -1,7 +1,7 @@
 <DOCTYPE html>
 <html>
 <head>
-<title>Find the treasure!>
+<title>Find the treasure!</title>
 </head>
 <body>
 <h1 id = "heading">Find the hidden treasure!</h1>
@@ -32,7 +32,16 @@ var yDifference = event.offsetY - treasure.y;
 return Math.sqrt((xDifference * xDifference) + (yDifference * yDifference)); //Pythagorean Theorem
 }                                                     
  
-                                                     
+var clicks = 0;
+
+$("#map").click(function (event){
+// Click handler code goes here
+// Check for distance
+// Check if they are close enough to find the treasure
+// If they fave 'found it' tell them how many clicks it took
+// Give a hint if they are too far away        
+clicks++;
+});        
 </script>
 
 </body>
