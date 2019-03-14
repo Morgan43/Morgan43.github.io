@@ -27,7 +27,11 @@ y: getRandomNumber(height)
 
 var getDistanceToTreasure = function(event, treasure)
 {
-var xDifference                                                     
+var xDifference = event.offsetX - treasure.x;
+var yDifference = event.offsetY - treasure.y;
+return Math.sqrt((xDifference * xDifference) + (yDifference * yDifference)); //Pythagorean Theorem
+}                                                     
+ 
                                                      
 </script>
 
