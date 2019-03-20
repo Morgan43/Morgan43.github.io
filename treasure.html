@@ -1,48 +1,86 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Find the treasure!</title>
+<title>find the treasure!</title>
 </head>
 <body>
-<h1 id = "heading">Find the hidden treasure!</h1>
-<ing id = "map" width=400 height=400 src="https://nostarch.com/images/treasuremap.png">
+<h1 id = "heading">find the hidden treasure!</h1>
 
-<p id= distance"></p>
+<img id = "map" width=400 height=400
+src="https://nostarch.com/images/treasuremap.png">
+
+<p id="distance"></p>
 
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 
 <script>
 var getRandomNumber = function(size)
 {
-return Math.floor(Math.random() * size);
+  return Math.floor(Math.random() * size);
 };
-
-var width = 400;
-var height = 400;
-
-var treasure = {
-x: getRandomNumber(width),
-y: getRandomNumber(height)
-};
-
-var getDistanceToTreasure = function(event, treasure)
-{
-var xDifference = event.offsetX - treasure.x;
-var yDifference = event.offsetY - treasure.y;
-return Math.sqrt((xDifference * xDifference) + (yDifference * yDifference)); //Pythagorean Theorem
-};                                                     
- 
-var clicks = 0;
-
-$("#map").click(function (event){
-// Click handler code goes here
-// Check for distance
-// Check if they are close enough to find the treasure
-// If they fave 'found it' tell them how many clicks it took
-// Give a hint if they are too far away        
-clicks++;
-});        
+  
+  var width = 400;
+  var height = 400;
+  
+  var treasure = {
+    x: getRandomNumber(width),
+    y: getRandomNumber(height)
+  };
+  
+  var getDistanceToTreasure = function(event, treasure)
+  {
+    var xDifference = event.offsetX - treasure.x;
+    var yDifference = event.offsety - treasure.y;
+    return Math.sqrt((xDifference * xDifference) +
+                     ((yDifference * yDifference); 
+                      }
+                      
+       var clicks = 0;
+                      
+      $("#map").click(function (event){
+      //click handler code goes here
+        //check for distance
+        var dist = getDistanceToTreasure(event, treasure);
+        //check if they are close enough to find the treasure
+        //if they have 'found it' tell them how many clicks it took
+        if (dist <= 10)
+        {
+          alert("You found the treasure. It only took you " + clicks+ " clicks!");
+          $("#distance").setText("You are "+dist+" pixels away!");
+        }else {
+          ////give a hint if they are too far away
+          hint(dist);
+        });
+      
+      var hint = function(dist)
+      {
+        if(dist <= 20)
+        {
+          alert("You're on fire, move slightly closer to find the treasure!");
+        }else if (dist <= 50)
+       {
+          alert("You are very hot! Move a little closer to find the treasure!")
+        }else if (dist <= 90)
+       {
+          alert("You are really warm! Move closer to find the treasure the treasure!")
+        }else if (dist <= 140)
+       {
+          alert("You are warm! Move a little closer to find the treasure!")
+        }else if (dist <= 200)
+       {
+          alert("You are cool. Move closer to find the treasure!")
+        }else if (dist <= 270)
+       {
+          alert("You are very cool. Move closer to find the treasure!")
+        }else if (dist <= 350)
+       { 
+          alert("You are freezing. Move a lot closer to find the treasure!")
+        }else if (dist <= 399)
+       { 
+        $("#distance").setText("You are "+dist+" pixels away!");
+      };
+      clicks++
+    });                 
 </script>
-
 </body>
 </html>
