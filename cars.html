@@ -19,7 +19,7 @@ this.y = y;
 var tesla = new Car(10,20); // x=10, y=20
 
 // Let's create a method to draw a car
-Car.prodotype.draw = function()
+Car.prototype.draw = function()
 {
 var carHtml = '<img src="https://nostarch.com/images/car.png">';
 
@@ -34,7 +34,7 @@ top: this.y
 $("body").append(carElement);
 };
   
-Car.prodotype.moveRight = function()
+Car.prototype.moveRight = function()
 {
   this.x += 5; // adds 5 to the x value
   
