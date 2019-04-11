@@ -44,7 +44,40 @@ Car.prototype.moveRight = function()
     top: this.y
   });
 };
+  
+Car.prototype.moveLeft = function()
+{
+  this.x -= 5; // subtracts 5 from the x value
+  
+  // this updates the position on the screen
+  this.carElement.css({
+    left: this.x, 
+    top: this.y
+  });
+};
+  
+Car.prototype.moveup = function()
+{
+  this.y -= 5; // subtracts 5 from the x value
+  
+  // this updates the position on the screen
+  this.carElement.css({
+    left: this.x, 
+    top: this.y
+  });
+};
 
+Car.prototype.moveDown = function()
+{
+  this.y += 5; // subtracts 5 from the x value
+  
+  // this updates the position on the screen
+  this.carElement.css({
+    left: this.x, 
+    top: this.y
+  });
+};
+  
 tesla.draw();
   tesla.moveRight();
   tesla.moveRight();
