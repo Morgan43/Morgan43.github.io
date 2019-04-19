@@ -9,6 +9,16 @@
     <script>
       var canvas = document.getElementById("canvas"); // look for canvas
       var ctx = canvas.getContext("2d"); // tells javascript that the drawing will be 2 dimensional
+      
+      ctx.fillStyle="00ffff";
+      ctx.fillRect(0, 0, 133, 400); // first rectangle
+      
+      ctx.fillStyle="ff1493";
+      ctx.fillRect(133, 0, 133, 400); // second rectangle
+      
+      ctx.fillStyle="7cfc00";
+      ctx.fillRect(266, 0, 134, 400); // third rectangle
+      
       ctx.fillRect(100, 0, 50, 50); // draw and fill a rectangle, at (100,0) for the head
       ctx.fillRect(120, 50, 10, 10);// neck
       ctx.fillRect(40, 60, 170, 10); // arms
