@@ -19,13 +19,21 @@
       ctx.fillStyle="green";
       ctx.fillRect(266, 0, 134, 400); // third rectangle
       
-   ctx.strokeStyle="black"
+  ctx.strokeStyle="black"
    ctx.lineWidth="1"
-   ctx.strokeRect(40 , 0, 10, 10);
-   ctx.beginPath(45, 10);
-   ctx.lineTo( 45, 33);
-   ctx.beginPath( 0, 11)
-   ctx.lineTo( 80, 11)
+   ctx.strokeRect(40 , 0, 20, 20);
+   ctx.beginPath();
+      ctx.moveTo(50,20);
+      ctx.lineTo( 50, 60);
+      ctx.moveTo( 50, 35);
+      ctx.lineTo( 80, 11);
+      ctx.moveTo( 50, 35);
+      ctx.lineTo( 20, 11);
+      ctx.moveTo( 50, 60);
+      ctx.lineTo( 80, 85);
+      ctx.moveTo( 50, 60);
+      ctx.lineTo( 20, 85);
+   ctx.stroke();
       
     </script>
   </body>
