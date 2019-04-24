@@ -21,19 +21,43 @@
       
   ctx.strokeStyle="black"
    ctx.lineWidth="1"
-   ctx.strokeRect(40 , 0, 20, 20);
-   ctx.beginPath();
+      
+   var head = function(){
+     ctx.strokeRect(40 , 0, 20, 20);// head
+   }
+      
+   var body = function(){
+    ctx.beginPath();
       ctx.moveTo(50,20);
       ctx.lineTo( 50, 60);
-      ctx.moveTo( 50, 35);
+    ctx.stroke();
+   }
+   var leftArm = function(){
+     ctx.beginPath();
+      ctx.moveTo( 50, 35);// left arm
       ctx.lineTo( 80, 11);
-      ctx.moveTo( 50, 35);
+     ctx.stroke();
+   }
+      var rightArm = function(){
+        ctx.beginPath();
+        ctx.moveTo( 50, 35);// right arm
       ctx.lineTo( 20, 11);
-      ctx.moveTo( 50, 60);
+        ctx.stroke();
+      }
+      var rightLeg = function(){
+        ctx.beginPath();
+        ctx.moveTo( 50, 60);// right leg
       ctx.lineTo( 80, 85);
-      ctx.moveTo( 50, 60);
+        ctx.stroke
+      }
+      var leftLeg = function(){
+        ctx.beginPath();
+        ctx.moveTo( 50, 60);// left arm
       ctx.lineTo( 20, 85);
-   ctx.stroke();
+       ctx.stroke();
+      }
+      
+      
       
     </script>
   </body>
