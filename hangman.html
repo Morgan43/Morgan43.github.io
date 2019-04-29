@@ -12,7 +12,8 @@
       var guessedLetters = [];
       
       //lives
-      var lives = 6
+      var lives = 6;
+      
       
       //Pick a random word
       var word = words[Math.floor(Math.random() *words.length)];
@@ -58,14 +59,39 @@
             }
             else
             {
-              guessedLetters.push(guess); 
               lives -= 1;
+              //body parts apear
+              if(lives === 5)
+              {
+                head();
+              }else if (lives === 4)
+              {
+                body();
+              } else if (lives === 3)
+              {
+                leftArm();
+              }else if (lives === 2)
+              {
+                rightArm();
+              } else if(lives === 1)
+              {
+                  leftLeg();
+              } else if(lives === 0)
+              {
+                  rightLeg();
+              }
+      
             }
-            
+            guessedLetters.push(guess);
           }
         }
       }
+      
+      var head = function()
+      {
+        ctx.strokeRect(40,0,20,20);
+      };
+      
       alert("Good job! The answer was " + word); 
     </script>
   </body>
-</html>
