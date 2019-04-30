@@ -7,6 +7,16 @@
     <a href="index.html">Home</a>
     <h1> Hangman! </h1>
     <script>
+      
+        ctx.beginPath();//to the gallows
+      ctx.moveTo(10, 200);
+      ctx.lineTo(10, 40);
+      ctx.moveTo(10, 40);
+      ctx.lineTo(85, 40);
+      ctx.moveTo(85, 40);
+      ctx.lineTo(85, 55);
+      ctx.stroke();
+      
       //Create a list of words to choose from
       var words = ["mammaml","human", "Logan", "Morgan", "Hanna" ,"reading", "dog", "cat", "dolphin", "orca"];
       var guessedLetters = [];
@@ -137,14 +147,6 @@
        ctx.stroke();
       }
       
-      ctx.beginPath();//to the gallows
-      ctx.moveTo(10, 200);
-      ctx.lineTo(10, 40);
-      ctx.moveTo(10, 40);
-      ctx.lineTo(85, 40);
-      ctx.moveTo(85, 40);
-      ctx.lineTo(85, 55);
-      ctx.stroke();
       
    
       
