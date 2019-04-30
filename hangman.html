@@ -7,6 +7,8 @@
     <a href="index.html">Home</a>
     <h1> Hangman! </h1>
     <script>
+      var canvas = document.getElementById("canvas"); // look for canvas
+      var ctx = canvas.getContext("2d"); // tells javascript that the drawing will be 2 dimensional
       
         ctx.beginPath(); //to the gallows
       ctx.moveTo(10, 200);
@@ -97,8 +99,7 @@
         }
       }
       
-      var canvas = document.getElementById("canvas"); // look for canvas
-      var ctx = canvas.getContext("2d"); // tells javascript that the drawing will be 2 dimensional
+      
       
       ctx.fillStyle="blue";
       ctx.fillRect(0, 0, 133, 400); // first rectangle
