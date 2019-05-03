@@ -79,7 +79,14 @@ for(var j = 0; j < word.length; j++)
   {
     answerArray[j] = guess;
     remainingLetters--;
-    gotIt = true;                                            
+    gotIt = true;
+                                                
+if (gotIt)
+   {
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(50, 100);                                          
+                                                
   }
 }
 if(!gotIt)
